@@ -1,0 +1,244 @@
+.section {
+  min-height: 700px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #aa55002b 0%, #ffffff 100%);
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.03) 0%, transparent 70%);
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.inner {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  background: rgba(255, 106, 0, 0.1);
+  border: 1px solid rgba(255, 106, 0, 0.3);
+  border-radius: 50px;
+  color: var(--color-orange);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--color-orange), #954300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* New Logos Grid Styles */
+.logosContainer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.logosContainer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 106, 0, 0.03) 0%, transparent 50%);
+  animation: pulse-bg 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-bg {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.logosGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 16px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.logoCard {
+  position: relative;
+  aspect-ratio: 1;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 5px;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 106, 0, 0.08);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.logoCard.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logoCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(255, 106, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 106, 0, 0.2);
+}
+
+.logoWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.logoWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 106, 0, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.logoCard:hover .logoWrapper::after {
+  opacity: 1;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(20%);
+}
+
+.logoCard:hover .logoImage {
+  transform: scale(1.2);
+  filter: grayscale(0%) brightness(1.05);
+}
+
+@media (max-width: 1024px) {
+  .logosGrid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 14px;
+  }
+
+  .logoCard {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 32px 20px;
+  }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 5px 16px;
+  }
+
+  .logosGrid {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 12px;
+  }
+
+  .logoCard {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 24px 16px;
+  }
+
+  .logosGrid {
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    gap: 10px;
+  }
+
+  .logoCard {
+    padding: 8px;
+    border-radius: 12px;
+  }
+}
+

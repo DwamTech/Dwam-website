@@ -1,0 +1,584 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+
+.wrap {
+  position: relative !important;
+  min-height: 100svh !important;
+  height: auto !important;
+  scroll-snap-align: start;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background-image: url("/human-ai-touch-connection-technology-innovation.webp") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: #ffffff !important;
+}
+
+.wrap::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    radial-gradient(1200px 400px at 80% 20%, rgba(255, 106, 0, 0.22), transparent 60%),
+    radial-gradient(900px 300px at 10% 80%, rgba(0, 183, 255, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.75)) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.background {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.neuralNetwork {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.neuralNode {
+  animation: pulse 6s infinite linear !important;
+}
+
+.container {
+  position: relative !important;
+  z-index: 3 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  height: 100% !important;
+  padding: 48px 6vw !important;
+}
+
+.contentFull {
+  position: relative !important;
+  width: 100% !important;
+  direction: rtl !important;
+}
+
+.header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 24px !important;
+}
+
+.contentGrid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+  align-items: center !important;
+}
+
+.textCol {
+  position: relative !important;
+}
+
+.imageCol {
+  position: relative !important;
+}
+
+.showcase {
+  position: relative !important;
+  width: 100% !important;
+  height: clamp(240px, 40vh, 420px) !important;
+  max-height: 60vh !important;
+  margin: 0 auto 16px !important;
+  overflow: hidden !important;
+  filter: saturate(110%) contrast(105%) brightness(95%) !important;
+  animation: floatSoft 7.2s ease-in-out infinite alternate !important;
+}
+
+.mainImage {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 75% !important;
+  height: 100% !important;
+  max-width: clamp(360px, 62vw, 660px) !important;
+  aspect-ratio: 16 / 9 !important;
+  background: rgba(255,255,255,0.06) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55) !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  backdrop-filter: blur(6px) saturate(120%) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+}
+
+.mainImg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 16px !important;
+}
+
+.aiElement {
+  position: absolute !important;
+  background: rgba(255,255,255,0.10) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45) !important;
+  z-index: 2 !important;
+  transition: all 0.3s ease !important;
+  animation: float-rotate 20s infinite linear !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(10px) saturate(120%) !important;
+}
+
+.aiElement:hover {
+  transform: translateY(-3px) scale(1.03) rotate(0deg) !important;
+  z-index: 10 !important;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.6) !important;
+}
+
+.aiElementInner {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: rgba(255,255,255,0.06) !important;
+  padding: 16px !important;
+  text-align: center !important;
+  color: #ffffff !important;
+}
+
+.aiElementInner i {
+  font-size: 40px !important;
+  color: #ff8400 !important;
+  margin: 0 !important;
+}
+
+.aiElementInner p {
+  font-size: 14px !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+.neuralElement,
+.dataFlow {
+  position: absolute !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+  backdrop-filter: blur(10px) saturate(120%) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45) !important;
+  z-index: 2 !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  transition: all 0.3s ease !important;
+  animation: float-rotate 20s infinite linear !important;
+  color: #ffffff !important;
+}
+
+.neuralElement:hover,
+.dataFlow:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 10 !important;
+}
+
+.node {
+  animation: neural-pulse 3s infinite ease-in-out !important;
+}
+
+.connection {
+  animation: connection-pulse 3s infinite ease-in-out !important;
+}
+
+.content {
+  padding: clamp(18px, 4.5vh, 32px) !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45) !important;
+  text-align: right !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(10px) saturate(120%) !important;
+}
+
+.title {
+  font-size: clamp(26px, 3.6vw, 42px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-bottom: 18px !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.titleLine {
+  position: absolute !important;
+  bottom: -10px !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 3px !important;
+  background: linear-gradient(to right, #ff5800, #ff8400) !important;
+}
+
+.description p {
+  font-size: clamp(12px, 1.4vw, 16px) !important;
+  line-height: clamp(1.5, 2vw, 1.8) !important;
+  color: #e6e6e6 !important;
+  margin-bottom: clamp(10px, 1.4vh, 16px) !important;
+}
+
+.serviceItem {
+  display: grid !important;
+  grid-template-columns: 40px 1fr !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: all 0.2s ease !important;
+  background: rgba(255,255,255,0.08) !important;
+  /* border: 1px solid rgba(255,255,255,0.12) !important; */
+  border-right: #9d4700 4px solid !important;
+  border-radius: 14px !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(10px) saturate(115%) !important;
+}
+
+.serviceItem:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.55) !important;
+  background: rgba(255,255,255,0.12) !important;
+}
+
+.serviceIcon {
+  min-width: clamp(34px, 5.5vw, 44px) !important;
+  height: clamp(34px, 5.5vw, 44px) !important;
+  background: linear-gradient(135deg, rgba(255,106,0,0.85), rgba(255,46,103,0.8)) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 12px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 6px 20px rgba(255,106,0,0.4) !important;
+  align-self: center !important;
+}
+
+.serviceItem:hover .serviceIcon {
+  filter: brightness(1.05) !important;
+  transform: scale(1.06) !important;
+}
+
+.serviceIcon i {
+  color: #ffffff !important;
+  font-size: clamp(14px, 2vw, 18px) !important;
+}
+
+.serviceItem p {
+  font-size: clamp(12px, 1.4vw, 15px) !important;
+  margin: 0 !important;
+  color: #ffffff !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  line-height: 1.4 !important;
+}
+
+.ctaBtn {
+  background: linear-gradient(90deg, #ff6a00, #af5b00) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+  box-shadow: 0 8px 24px rgba(255, 106, 0, 0.45) !important;
+  margin-top: 24px !important;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 32px rgba(255, 106, 0, 0.55) !important;
+  filter: brightness(1.05) !important;
+}
+
+.moreBtnWrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 24px !important;
+}
+
+.moreBtn {
+  appearance: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 12px 32px !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  background: linear-gradient(90deg, #ff6a00, #9d4700) !important;
+  box-shadow: 0 6px 24px rgba(255, 106, 0, 0.4) !important;
+  cursor: pointer !important;
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  text-decoration: none !important;
+}
+.moreBtn:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 10px 32px rgba(255, 106, 0, 0.55) !important;
+  filter: brightness(1.05) !important;
+}
+.ctaIcon {
+  margin-left: 8px !important;
+}
+
+.scrollDownArrow {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 16px !important;
+}
+.scrollDownArrow a {
+  width: 42px !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #fff !important;
+  background: rgba(0,0,0,0.35) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(6px) !important;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease !important;
+  text-decoration: none !important;
+  animation: bounce 2s ease-in-out infinite !important;
+}
+.scrollDownArrow a:hover {
+  transform: translateY(-2px) !important;
+  background: rgba(255,106,0,0.25) !important;
+  border-color: rgba(255,106,0,0.6) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.4) !important;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) !important; }
+  50% { transform: translateY(-8px) !important; }
+}
+.quoteRight {
+  color: #ff8400 !important;
+  font-size: 20px !important;
+  margin-left: 10px !important;
+  vertical-align: top !important;
+}
+
+.quoteLeft {
+  color: #ff8400 !important;
+  font-size: 20px !important;
+  margin-right: 10px !important;
+  vertical-align: bottom !important;
+}
+
+.titleWrap {
+  margin-bottom: clamp(12px, 2.4vh, 24px) !important;
+}
+
+.subheading {
+  font-size: clamp(20px, 2.8vw, 24px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 18px !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.subheadingIcon {
+  color: #ff8400 !important;
+  margin-left: 10px !important;
+}
+
+.servicesList {
+  margin-bottom: 8px !important;
+}
+
+.servicesGrid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(8px, 1.6vh, 14px) !important;
+}
+
+@media (max-width: 640px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+.pos1 {
+  top: 10% !important;
+  right: 0 !important;
+  width: 120px !important;
+  height: 120px !important;
+  transform: rotate(10deg) !important;
+}
+
+.pos2 {
+  bottom: 15% !important;
+  left: 5% !important;
+  width: 100px !important;
+  height: 100px !important;
+  transform: rotate(-5deg) !important;
+}
+
+.neuralPos {
+  bottom: 5% !important;
+  right: 10% !important;
+  width: 140px !important;
+  height: 100px !important;
+  transform: rotate(5deg) !important;
+}
+
+.dataFlowPos {
+  top: 60% !important;
+  right: 20% !important;
+  width: 120px !important;
+  height: 80px !important;
+  transform: rotate(-3deg) !important;
+}
+
+.innerPad10 {
+  padding: 10px !important;
+}
+
+.icon35 {
+  font-size: 35px !important;
+}
+
+.icon30 {
+  font-size: 30px !important;
+  margin-bottom: 5px !important;
+}
+
+.text12 {
+  font-size: 12px !important;
+}
+
+.mb30 {
+  margin-bottom: 30px !important;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+  100% { opacity: 0.2; transform: scale(1); }
+}
+
+@keyframes float-rotate {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -15px) rotate(90deg); }
+  50% { transform: translate(0, -25px) rotate(180deg); }
+  75% { transform: translate(-10px, -15px) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes floatSoft {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-8px) scale(1.02); }
+}
+
+@keyframes neural-pulse {
+  0% { r: 5; opacity: 0.8; }
+  50% { r: 6; opacity: 1; }
+  100% { r: 5; opacity: 0.8; }
+}
+
+@keyframes connection-pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}
+
+@media (max-width: 1200px) {
+  .wrap { padding: 0 !important; }
+  .title { font-size: 32px !important; }
+  .description p { font-size: 16px !important; }
+  .showcase { height: 450px !important; max-height: 55vh !important; }
+  .mainImage { width: 75% !important; max-width: 500px !important; }
+  .pos1 { width: 110px !important; height: 110px !important; right: 0 !important; }
+  .pos2 { width: 90px !important; height: 90px !important; left: 3% !important; }
+  .neuralPos { width: 130px !important; height: 90px !important; right: 5% !important; }
+  .dataFlowPos { width: 110px !important; height: 70px !important; right: 15% !important; }
+  .content { padding: 35px !important; }
+}
+
+@media (max-width: 992px) {
+  .wrap { padding: 0 !important; }
+  .title { font-size: 28px !important; }
+  .description p { font-size: 15px !important; }
+  .showcase { height: 400px !important; max-height: 50vh !important; margin-top: 40px !important; }
+  .mainImage { width: 70% !important; max-width: 400px !important; }
+  .pos1 { width: 100px !important; height: 100px !important; right: 0 !important; }
+  .pos2 { width: 80px !important; height: 80px !important; left: 2% !important; }
+  .neuralPos { width: 120px !important; height: 80px !important; right: 3% !important; }
+  .dataFlowPos { width: 100px !important; height: 60px !important; right: 10% !important; }
+  .content { padding: 30px !important; }
+  .contentGrid { grid-template-columns: 1fr !important; }
+  .imageCol { order: -1 !important; }
+}
+
+@media (max-width: 768px) {
+  .row { gap: 16px !important; }
+  .col { flex: 1 1 100% !important; max-width: none !important; }
+  .wrap { padding: 0 !important; }
+  .content { padding: 25px !important; }
+  .title { font-size: 24px !important; }
+  .description p { font-size: 14px !important; }
+  .serviceItem p { font-size: 14px !important; }
+  .showcase { height: 350px !important; max-height: 45vh !important; }
+  .mainImage { width: 65% !important; max-width: 300px !important; }
+  .pos1 { width: 90px !important; height: 90px !important; }
+  .pos2 { width: 70px !important; height: 70px !important; }
+  .neuralPos { width: 110px !important; height: 70px !important; }
+  .dataFlowPos { width: 90px !important; height: 50px !important; }
+  .ctaBtn { font-size: 14px !important; padding: 10px 20px !important; }
+  .contentGrid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 !important; }
+  .content { padding: 20px !important; }
+  .title { font-size: 22px !important; }
+  .description p { font-size: 13px !important; }
+  .serviceItem p { font-size: 13px !important; }
+  .serviceIcon { min-width: 40px !important; height: 40px !important; }
+  .serviceIcon i { font-size: 18px !important; }
+  .showcase { height: 320px !important; max-height: 42vh !important; }
+  .mainImage { width: 60% !important; max-width: 280px !important; }
+  .pos1 { width: 80px !important; height: 80px !important; }
+  .pos2 { width: 60px !important; height: 60px !important; }
+  .neuralPos { width: 100px !important; height: 60px !important; }
+  .dataFlowPos { width: 80px !important; height: 45px !important; }
+}
+
+@media (max-width: 576px) {
+  .ctaBtn { font-size: 12px !important; padding: 8px 15px !important; }
+}
+
+@media (max-width: 320px) {
+  .wrap { padding: 0 !important; }
+  .content { padding: 15px !important; }
+  .title { font-size: 20px !important; }
+  .description p { font-size: 12px !important; }
+  .serviceItem p { font-size: 12px !important; }
+  .serviceIcon { min-width: 35px !important; height: 35px !important; }
+  .serviceIcon i { font-size: 16px !important; }
+  .showcase { height: 250px !important; max-height: 35vh !important; }
+  .mainImage { width: 55% !important; max-width: 200px !important; }
+  .pos1 { width: 70px !important; height: 70px !important; }
+  .pos2 { width: 50px !important; height: 50px !important; }
+  .neuralPos { width: 90px !important; height: 50px !important; }
+  .dataFlowPos { width: 70px !important; height: 40px !important; }
+  .ctaBtn { font-size: 10px !important; padding: 6px 12px !important; }
+}

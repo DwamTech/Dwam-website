@@ -1,0 +1,37 @@
+.section {
+  height: 700px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  padding: 24px;
+}
+
+.inner {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-orange);
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  background: var(--color-orange);
+  color: var(--color-white);
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+

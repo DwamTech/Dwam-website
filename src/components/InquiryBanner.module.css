@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap");
+
+.bannerWrapper {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    /* background: linear-gradient(135deg, #0a0a1e 0%, #1a1a2e 50%, #0f0f1f 100%); */
+    direction: rtl;
+    background-image: url("/top-view-work-space-with-laptop-headphones.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Cairo', sans-serif;
+}
+
+.bannerWrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+}
+
+.bannerContainer {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* Animated Background Elements */
+.bgDecoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 132, 0, 0.15) 0%, transparent 70%);
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -50px;
+    animation-delay: 0s;
+}
+
+.circle2 {
+    width: 200px;
+    height: 200px;
+    bottom: -80px;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.circle3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+}
+
+.content:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 132, 0, 0.3);
+    box-shadow: 0 20px 50px rgba(255, 132, 0, 0.2);
+}
+
+/* Icon Section */
+.iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconCircle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff8400 0%, #ff6a00 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(255, 132, 0, 0.4);
+    animation: iconBounce 2s ease-in-out infinite;
+    z-index: 2;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.pulse {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 132, 0, 0.3);
+    animation: pulse 2s ease-out infinite;
+    z-index: 1;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Text Section */
+.textSection {
+    text-align: right;
+    color: #fff;
+    flex: 1;
+}
+
+.title {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 800;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.highlight {
+    background: linear-gradient(135deg, #ff8400 0%, #ffca28 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff8400 0%, #ffca28 100%);
+    border-radius: 10px;
+    animation: underlineExpand 1.5s ease-in-out infinite;
+}
+
+@keyframes underlineExpand {
+
+    0%,
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    50% {
+        width: 60%;
+        opacity: 0.6;
+    }
+}
+
+.subtitle {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* CTA Buttons */
+.ctaGroup {
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Primary Button (WhatsApp) */
+.btnPrimary {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.btnPrimary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btnPrimary:hover::before {
+    left: 100%;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Secondary Button (Phone) */
+.btnSecondary {
+    background: rgba(255, 132, 0, 0.1);
+    color: #ff8400;
+    border: 2px solid #ff8400;
+    box-shadow: 0 8px 25px rgba(255, 132, 0, 0.2);
+}
+
+.btnSecondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #ff8400 0%, #ff6a00 100%);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.btnSecondary:hover::before {
+    width: 100%;
+}
+
+.btnSecondary:hover {
+    color: #fff;
+    border-color: #ff8400;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 132, 0, 0.4);
+}
+
+/* Decorative Line */
+.decorLine {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff8400, transparent);
+    border-radius: 10px;
+    animation: lineGlow 2s ease-in-out infinite;
+}
+
+@keyframes lineGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        width: 200px;
+    }
+
+    50% {
+        opacity: 1;
+        width: 300px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bannerWrapper {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .iconCircle {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .pulse {
+        width: 50px;
+        height: 50px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .circle1,
+    .circle2,
+    .circle3 {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .bannerWrapper {
+        padding: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .textSection {
+        text-align: center;
+    }
+
+    .iconCircle {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .pulse {
+        width: 45px;
+        height: 45px;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+    }
+
+    .ctaGroup {
+        flex-direction: row;
+        width: 100%;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .btn {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .btn span {
+        display: inline;
+    }
+
+    .btn i {
+        font-size: 1rem;
+    }
+}

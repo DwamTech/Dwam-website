@@ -1,0 +1,24 @@
+.wrap {
+  min-height: 700px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--color-white);
+}
+
+.inner {
+  max-width: 900px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-orange);
+  margin-bottom: 12px;
+}
+
+.desc {
+  color: var(--color-gray);
+}
+

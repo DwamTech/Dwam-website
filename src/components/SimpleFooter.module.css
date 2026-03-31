@@ -1,0 +1,212 @@
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  padding: 20px 0;
+  border-top: 2px solid rgba(255, 132, 0, 0.3);
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff8400, transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  direction: rtl;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.separator {
+  color: rgba(255, 132, 0, 0.5);
+  font-weight: 300;
+}
+
+.brandSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.1);
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 132, 0, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.logoLink:hover .logo {
+  filter: drop-shadow(0 0 15px rgba(255, 132, 0, 0.8));
+}
+
+.registered {
+  color: #ff8400;
+  font-size: 20px;
+  font-weight: 700;
+  vertical-align: super;
+}
+
+.companyType {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  /* font-style: italic; */
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff8400, #ff6a00);
+  transition: width 0.3s ease;
+}
+
+.link:hover {
+  color: #ff8400;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .footerContent {
+    font-size: 13px;
+    gap: 12px;
+  }
+
+  .logo {
+    height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .footerContent {
+    font-size: 12px;
+    gap: 8px;
+    line-height: 1.8;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .brandSection {
+    gap: 6px;
+  }
+
+  .links {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 12px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .footerContent {
+    font-size: 11px;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .links .separator {
+    display: inline;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .brandSection,
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

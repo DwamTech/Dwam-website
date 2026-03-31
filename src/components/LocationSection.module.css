@@ -1,0 +1,395 @@
+.section {
+  height: 700px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 106, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 46, 103, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 106, 0, 0.15);
+  border: 1px solid rgba(255, 106, 0, 0.3);
+  border-radius: 50px;
+  color: #ff6a00;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff, #ff6a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  min-height: 0;
+}
+
+.mapSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mapWrap {
+  flex: 1;
+  border: 2px solid rgba(255, 106, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 106, 0, 0.2);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.mapWrap::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #ff6a00, #ff2e67, #00b7ff, #ff6a00);
+  background-size: 300% 300%;
+  border-radius: 20px;
+  z-index: -1;
+  animation: gradientMove 4s ease infinite;
+  opacity: 0.5;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.mapWrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(255, 106, 0, 0.3);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 8px 4px 4px;
+}
+
+.infoSection::-webkit-scrollbar {
+  width: 6px;
+}
+
+.infoSection::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.infoSection::-webkit-scrollbar-thumb {
+  background: rgba(255, 106, 0, 0.5);
+  border-radius: 10px;
+}
+
+.infoSection::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 106, 0, 0.7);
+}
+
+.infoCard {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.infoCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 106, 0, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.infoCard:hover::before {
+  left: 100%;
+}
+
+.infoCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 106, 0, 0.4);
+  transform: translateX(-4px);
+  box-shadow: 0 8px 24px rgba(255, 106, 0, 0.2);
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #994000, #d86500);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 22px;
+  box-shadow: 0 8px 20px rgba(255, 106, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover .iconBox {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 10px 25px rgba(255, 106, 0, 0.4);
+}
+
+.infoContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff6a00;
+  margin: 0;
+}
+
+.infoText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.directionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #803500, #ff772e);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.directionBtn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.directionBtn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.directionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 106, 0, 0.5);
+}
+
+.directionBtn span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .infoSection {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    min-height: 700px;
+    padding: 40px 20px;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 16px;
+  }
+
+  .content {
+    gap: 16px;
+  }
+
+  .mapWrap {
+    height: 300px;
+  }
+
+  .infoCard {
+    padding: 16px;
+  }
+
+  .iconBox {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 20px;
+  }
+
+  .infoTitle {
+    font-size: 15px;
+  }
+
+  .infoText {
+    font-size: 13px;
+  }
+
+  .directionBtn {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 32px 16px;
+  }
+
+  .mapWrap {
+    height: 250px;
+  }
+
+  .infoCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infoCard:hover {
+    transform: translateY(-4px);
+  }
+}
+
+
+/* iPad/tablet layout fixes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section {
+    height: auto;
+    min-height: 700px;
+    align-items: stretch;
+    overflow: visible;
+    padding: 32px 20px;
+  }
+
+  .container {
+    height: auto;
+    max-width: 100%;
+    gap: 18px;
+  }
+
+  .content {
+    flex: 0 0 auto;
+  }
+
+  .mapSection {
+    height: auto;
+  }
+
+  .mapWrap {
+    height: 300px;
+    flex: unset;
+  }
+
+  .infoSection {
+    overflow: visible;
+    padding: 0;
+  }
+}

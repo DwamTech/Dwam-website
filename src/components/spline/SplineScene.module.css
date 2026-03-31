@@ -1,0 +1,11 @@
+﻿.splineScene {
+  width: 100%;
+  height: 100%;
+}
+
+.splineScene :global(canvas),
+.splineScene :global(iframe) {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}

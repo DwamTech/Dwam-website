@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+
+/* Container & Background */
+.section {
+  position: relative;
+  min-height: 700px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/innovative-business-technology-2025-02-09-23-10-49-utc.webp');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: slowZoom 30s infinite alternate;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark blue technical gradient overlay */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 100%);
+  z-index: 1;
+}
+
+/* Decoration (Preserved Icons) */
+.decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.floatingIcon {
+  position: absolute;
+  opacity: 0.08;
+  color: #fff;
+}
+
+.cloud1 {
+  top: 15%;
+  right: 10%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.cloud1 i {
+  font-size: 150px;
+}
+
+.cloud2 {
+  bottom: 20%;
+  left: 8%;
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+.cloud2 i {
+  font-size: 120px;
+  color: #ff8400;
+}
+
+.cloud3 {
+  top: 60%;
+  right: 20%;
+  animation: float 14s ease-in-out infinite;
+}
+
+.cloud3 i {
+  font-size: 80px;
+}
+
+.glowingOrbHelper {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 132, 0, 0.15) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Main Content Container */
+.container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Header */
+.headerContent {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #ff8400, #ffb347);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0 5px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #c0c5d6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scrollDownArrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(28px, 6vh, 72px);
+  z-index: 11;
+}
+.scrollDownArrow a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+  text-decoration: none;
+  animation: bounce 2s ease-in-out infinite;
+}
+.scrollDownArrow a:hover {
+  transform: translateY(-2px);
+  background: rgba(255,106,0,0.25);
+  border-color: rgba(255,106,0,0.6);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+}
+.scrollDownArrow i {
+  font-size: 18px;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+/* Grid Layout */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.servicesArea {
+  position: relative;
+  z-index: 5;
+}
+
+/* Glass Card (Left Side) */
+.glassCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeading {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-right: 4px solid #ff8400;
+  padding-right: 15px;
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px
+  
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s;
+  background-color: #444444b5;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.serviceItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.iconBox {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 132, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff8400;
+  font-size: 16px;
+}
+
+.serviceText {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #ff8400 0%, #6a2700 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 132, 0, 0.25);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 132, 0, 0.35);
+}
+
+/* Visual Area (Right Side) */
+.visualArea {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.mainVisualContainer {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.pulseCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 350px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 132, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(255, 132, 0, 0.15);
+  animation: pulseGlow 3s infinite alternate;
+}
+
+.pulseCircle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: ripple 2s infinite linear;
+}
+
+.centerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.floatCard {
+  position: absolute;
+  background: rgba(20, 25, 40, 0.9);
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.floatCard i {
+  color: #ff8400;
+}
+
+.float1 {
+  top: 10%;
+  right: 0%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.float2 {
+  bottom: 0%;
+  left: 20%;
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+.float3 {
+  top: 40%;
+  left: -10%;
+  animation: float 5s ease-in-out infinite 0.5s;
+}
+
+/* Animations */
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 30px rgba(255, 132, 0, 0.1);
+    border-color: rgba(255, 132, 0, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 60px rgba(255, 132, 0, 0.4);
+    border-color: rgba(255, 132, 0, 0.6);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .visualArea {
+    order: -1;
+    /* Show visual first on mobile */
+    height: 300px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesList {
+    grid-template-columns: 1fr;
+  }
+
+  .mainVisualContainer {
+    width: 280px;
+    height: 280px;
+  }
+
+  .pulseCircle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .float3 {
+    left: 0;
+  }
+}
